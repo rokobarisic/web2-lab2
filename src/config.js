@@ -17,13 +17,13 @@ const config = {
   port: parseInt(optional("PORT", "3000"), 10),
   baseUrl: optional("BASE_URL", "http://localhost").replace(/\/+$/, ""),
 
-  /*db: {
+  db: {
     connectionString: required("DATABASE_URL"),
     ssl:
       optional("DATABASE_SSL", "false") === "true"
         ? { rejectUnauthorized: false }
         : false,
-  },*/
+  },
 };
 
 module.exports = config;

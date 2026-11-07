@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="hr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shuplyna</title>
+  <link rel="stylesheet" href="/app.css" />
+  <link rel="stylesheet" href="/sensitive-data.css" />
+</head>
+
+<body>
+  <main class="main-container">
+    <% if (!loggedIn) { %>
+    <form action="/create" method="POST">
+      <div id="checkbox-div">
+        <p>Uključi ranjivost?</p>
+        <input type="checkbox" name="checkbox" value="enabled">
+      </div>
+      <h1>Stvori račun:</h1>
+      <label for="username"></label>
+      <input type="text" name="username" id="username" placeholder="Unesi korisničko ime..." required>
+      <br>
+      <label for="password"></label>
+      <input type="password" name="password" id="password" placeholder="Unesi lozinku..." required>
+      <button type="submit" id="submit">Stvori</button>
+    </form>
+    <% } else { %>
+    <p>Pozdrav, <strong><%= username %></strong>!</p>
+
+    <% if (password) { %>
+    <p>Tvoja lozinka: <strong><%= password %></strong></p>
+    <% } %>
+    <div id="pass-buttons">
+      <% if (password) { %>
+      <form action="/hide-pass" method="POST">
+        <button class="pass-button">Sakrij moju lozinku</button>
+      </form>
+      <% } else { %>
+      <form action="/show-pass" method="POST">
+        <button class="pass-button">Pokaži moju lozinku</button>
+      </form>
+      <% } %>
+      <form action="/logout" method="POST">
+        <button class="pass-button">Izlogiraj me</button>
+      </form>
+    </div>
+
+
+    <% } %>
+
+  </main>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+#checkbox-div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#checkbox-div p {
+    margin: 0;
+    padding: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input:not([type="checkbox"]) {
+    border: 2px solid black;
+    margin-bottom: 10px;
+    min-height: 5vh;
+    min-width: 20vw;
+    font-size: larger;
+    padding-left: 5px;
+}
+
+#checkbox-div input[type="checkbox"] {
+    margin: 0;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    accent-color: black;
+    cursor: pointer;
+}
+
+#submit, .pass-button {
+    background-color: rgb(255, 243, 224);
+    border: 2px solid black;
+    border-radius: 8%;
+    width: 10vw;
+    height: 5vh;
+    cursor: pointer;
+}
+
+.pass-button {
+    width: 20vw;
+}
+
+#submit:hover, .pass-button:hover {
+    transform: scale(1.05);
+    background-color: rgb(255, 230, 192);
+}
+
+#pass-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+}
