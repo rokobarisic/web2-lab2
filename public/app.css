@@ -9,26 +9,55 @@
     font-weight: bold;
 }
 
-html {
-    height: 100%;
+*, *::before, *::after {
+    box-sizing: border-box;
 }
+
+html {
+    min-height: 100%;
+}
+
 body {
     background-color: blanchedalmond;
     font-family: Fira Code;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 70%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 40px 20px;
 }
 
 .main-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 800px;
 }
 
 .main-container p {
     text-align: center;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+button, input {
+    font-family: inherit;
+    font-size: 100%;
+}
+
+#home-icon {
+    max-width: 5vh;
+    position: absolute;
+    top: 3vh;
+    left: 3vh;
+}
+
+#home-icon:hover {
+    transform: scale(1.20);
 }

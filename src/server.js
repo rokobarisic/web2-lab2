@@ -23,8 +23,31 @@ app.get("/", (req, res) => {
   res.render("home");
 });
 
-app.get("/xss", (req, res) => {
-  res.render("xss");
+app.get("/xss", async (req, res) => {
+  try {
+    const comments = await db.getComments();
+    res.render("xss", {
+      comments,
+      xssVulnerable: req.session.xssVulnerable ?? false,
+    });
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+app.post("/xss/toggle", (req, res) => {
+  req.session.xssVulnerable = !req.session.xssVulnerable;
+  res.redirect("/xss");
+});
+
+app.post("/xss/comment", async (req, res) => {
+  const { comment } = req.body;
+  try {
+    await db.addComment(comment);
+  } catch (err) {
+    console.log(err);
+  }
+  res.redirect("/xss");
 });
 
 app.get("/sensitive-data", (req, res) => {

@@ -1,0 +1,104 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 800px;
+    width: 90%;
+}
+
+h2 {
+    margin: 0;
+}
+
+#toggle-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    padding: 12px 20px;
+    border: 2px solid black;
+    box-sizing: border-box;
+}
+
+#toggle-div p {
+    margin: 0;
+    font-weight: bold;
+}
+
+#toggle-div.vulnerable p {
+    color: #c0392b;
+}
+
+#toggle-div.safe p {
+    color: #27ae60;
+}
+
+#toggle-vulnerability-button {
+    background-color: rgb(255, 243, 224);
+    border: 2px solid black;
+    border-radius: 8%;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#toggle-vulnerability-button:hover {
+    transform: scale(1.05);
+    background-color: rgb(255, 230, 192);
+}
+
+#comments {
+    background-color: rgb(255, 230, 192);
+    width: 100%;
+    border: 2px solid black;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-sizing: border-box;
+    max-height: clamp(200px, 50vh, 500px);
+    overflow-y: scroll;
+}
+
+.comment {
+    border: 2px solid black;
+    border-radius: 8%;
+    background-color: rgb(255, 243, 224);
+    padding: 10px 16px;
+    word-break: break-word;
+}
+
+#comment-form {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 10px;
+    width: 100%;
+}
+
+#comment-form input {
+    flex: 1;
+    border: 2px solid black;
+    background-color: rgb(255, 243, 224);
+    padding: 10px 15px;
+    box-sizing: border-box;
+}
+
+#comment-form button {
+    background-color: rgb(255, 243, 224);
+    border: 2px solid black;
+    border-radius: 8%;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#comment-form button:hover {
+    transform: scale(1.05);
+    background-color: rgb(255, 230, 192);
+}
+
+#comment-form input:focus {
+    outline: none;
+    background-color: rgb(255, 230, 192);
+}

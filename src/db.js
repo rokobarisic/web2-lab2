@@ -33,4 +33,14 @@ async function getPassword(username) {
   return rows[0]?.password;
 }
 
-module.exports = { isTaken, createUser, getPassword };
+async function getComments() {
+  const { rows } = await pool.query(
+    `SELECT comment FROM comments ORDER BY created_at ASC LIMIT 25;`,
+  );
+  return rows;
+}
+
+async function addComment(comment) {
+  await pool.query(`INSERT INTO comments (comment) VALUES ($1)`, [comment]);
+}
+module.exports = { isTaken, createUser, getPassword, getComments, addComment };

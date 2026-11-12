@@ -11,8 +11,45 @@
 
 <body>
   <main class="main-container">
-  </main>
+    <a href="/">
+      <img src="/home-icon.png" id="home-icon">
+    </a>
 
+    <h2>Cross-site scripting (XSS)</h2>
+
+    <div id="toggle-div" class="<%= xssVulnerable ? 'vulnerable' : 'safe' %>">
+      <p>
+        <%= xssVulnerable ? 'Ranjivost uključena' : 'Ranjivost isključena' %>
+      </p>
+      <form action="/xss/toggle" method="POST">
+        <button type="submit" id="toggle-vulnerability-button">
+          <%= xssVulnerable ? 'Isključi' : 'Uključi' %>
+        </button>
+      </form>
+    </div>
+
+    <div id="comments">
+      <% if (comments.length === 0) { %>
+      <p>Još nema komentara.</p>
+      <% } else { %>
+      <% comments.forEach(c => { %>
+      <div class="comment">
+        <% if (xssVulnerable) { %>
+        <%- c.comment %>
+        <% } else { %>
+        <%= c.comment %>
+        <% } %>
+      </div>
+      <% }) %>
+      <% } %>
+    </div>
+
+    <form action="/xss/comment" method="POST" id="comment-form">
+      <input type="text" name="comment" placeholder="Unesi novi komentar..." required>
+      <button type="submit">Objavi</button>
+    </form>
+
+  </main>
 </body>
 
 </html>
