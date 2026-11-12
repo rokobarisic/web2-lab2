@@ -15,14 +15,14 @@
     flex: 1;
     text-align: center;
     box-shadow: 4px 4px 0px grey;
-    background-color: rgb(255, 243, 224);
+    background-color: #fbf6ef;
     text-decoration: none;
     color: inherit;
 }
 
 #vulnerability-selector a:hover {
     transform: scale(1.05);
-    background-color: rgb(255, 230, 192);
+    background-color: #ead7c3;
 }
 
 @media (max-width: 600px) {

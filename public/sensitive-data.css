@@ -25,7 +25,7 @@ form {
 
 input:not([type="checkbox"]) {
     border: 2px solid black;
-    background-color: rgb(255, 243, 224);
+    background-color: #fbf6ef;
     padding: 10px 15px;
     width: 100%;
     max-width: 400px;
@@ -33,11 +33,11 @@ input:not([type="checkbox"]) {
 
 input:not([type="checkbox"]):focus {
     outline: none;
-    background-color: rgb(255, 230, 192);
+    background-color: #ead7c3;
 }
 
 #submit, .pass-button {
-    background-color: rgb(255, 243, 224);
+    background-color: #fbf6ef;
     border: 2px solid black;
     border-radius: 8%;
     padding: 10px 25px;
@@ -46,7 +46,7 @@ input:not([type="checkbox"]):focus {
 
 #submit:hover, .pass-button:hover {
     transform: scale(1.05);
-    background-color: rgb(255, 230, 192);
+    background-color: #ead7c3;
 }
 
 #pass-buttons {

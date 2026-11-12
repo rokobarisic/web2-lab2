@@ -36,7 +36,7 @@ h2 {
 }
 
 #toggle-vulnerability-button {
-    background-color: rgb(255, 243, 224);
+    background-color: #fbf6ef;
     border: 2px solid black;
     border-radius: 8%;
     padding: 10px 20px;
@@ -45,11 +45,11 @@ h2 {
 
 #toggle-vulnerability-button:hover {
     transform: scale(1.05);
-    background-color: rgb(255, 230, 192);
+    background-color: #ead7c3;
 }
 
 #comments {
-    background-color: rgb(255, 230, 192);
+    background-color: #ead7c3;
     width: 100%;
     border: 2px solid black;
     padding: 20px;
@@ -64,7 +64,7 @@ h2 {
 .comment {
     border: 2px solid black;
     border-radius: 8%;
-    background-color: rgb(255, 243, 224);
+    background-color: #fbf6ef;
     padding: 10px 16px;
     word-break: break-word;
 }
@@ -80,13 +80,13 @@ h2 {
 #comment-form input {
     flex: 1;
     border: 2px solid black;
-    background-color: rgb(255, 243, 224);
+    background-color: #fbf6ef;
     padding: 10px 15px;
     box-sizing: border-box;
 }
 
 #comment-form button {
-    background-color: rgb(255, 243, 224);
+    background-color: #fbf6ef;
     border: 2px solid black;
     border-radius: 8%;
     padding: 10px 20px;
@@ -95,10 +95,10 @@ h2 {
 
 #comment-form button:hover {
     transform: scale(1.05);
-    background-color: rgb(255, 230, 192);
+    background-color: #ead7c3;
 }
 
 #comment-form input:focus {
     outline: none;
-    background-color: rgb(255, 230, 192);
+    background-color: #ead7c3;
 }
