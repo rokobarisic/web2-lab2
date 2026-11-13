@@ -64,6 +64,13 @@ input:not([type="checkbox"]):focus {
     width: auto;
 }
 
+#username-error {
+    background-color: brown;
+    color: white;
+    padding: 2px;
+    margin: 0;
+}
+
 @media (max-width: 600px) {
     #pass-buttons {
         flex-direction: column;

@@ -1,7 +1,6 @@
 const path = require("path");
 const express = require("express");
 const session = require("express-session");
-const notifier = require("node-notifier");
 const config = require("./config");
 const db = require("./db");
 
@@ -55,6 +54,7 @@ app.get("/sensitive-data", (req, res) => {
     loggedIn: req.session.loggedIn,
     username: req.session.username,
     password: req.session.password,
+    usernameTaken: req.session.usernameTaken,
   });
 });
 
@@ -63,18 +63,13 @@ app.post("/create", async (req, res) => {
 
   try {
     if (await db.isTaken(username)) {
-      notifier.notify({
-        title: "Korisničko ime je zauzeto!",
-        message: "Molimo pokušajte s drugim korisničkim imenom.",
-        sound: true,
-        wait: true,
-        icon: undefined,
-        actions: ["Razumijem"],
-      });
+      req.session.usernameTaken = true;
+      req.session.username = username;
     } else {
       const user = await db.createUser(username, password, !checkbox);
       req.session.loggedIn = true;
       req.session.username = username;
+      req.session.usernameTaken = false;
     }
   } catch (err) {
     console.log(err);
@@ -98,6 +93,7 @@ app.post("/logout", (req, res) => {
   req.session.username = undefined;
   req.session.password = undefined;
   req.session.loggedIn = undefined;
+  req.session.usernameTaken = undefined;
   res.redirect("/sensitive-data");
 });
 

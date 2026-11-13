@@ -21,17 +21,18 @@
         <p>Uključi ranjivost?</p>
         <input type="checkbox" name="checkbox" value="enabled">
       </div>
-      <h1>Stvori račun:</h1>
+      <% if (usernameTaken) { %>
+      <p id="username-error">Korisničko ime <strong><%= username %></strong> je zauzeto.</p>
+      <% } %>
       <label for="username"></label>
       <input type="text" name="username" id="username" placeholder="Unesi korisničko ime..." required>
       <br>
       <label for="password"></label>
       <input type="password" name="password" id="password" placeholder="Unesi lozinku..." required>
-      <button type="submit" id="submit">Stvori</button>
+      <button type="submit" id="submit">Stvori račun</button>
     </form>
     <% } else { %>
     <p>Pozdrav, <strong><%= username %></strong>!</p>
-
     <% if (password) { %>
     <p>Tvoja lozinka: <strong><%= password %></strong></p>
     <% } %>
