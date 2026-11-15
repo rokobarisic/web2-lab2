@@ -20,6 +20,7 @@ app.use(
 
 app.get("/", (req, res) => {
   res.render("home");
+  req.session.usernameTaken = false;
 });
 
 app.get("/xss", async (req, res) => {
